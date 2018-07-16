@@ -1,54 +1,54 @@
-#####安装：
+安装：
 
 ```
 npm install webpack -g
 ```
 
-#####Webpack打包文件：
+Webpack打包文件：
 
 ```
 webpack --mode development  hello.js --output hello.bundle.js
 ```
 
-#####安装loader: 
+安装loader: 
 
 ```
 npm install css-loader style-loader  --savr-dev
 ```
 
-#####引入loader:
+引入loader:
 
 ```
 require('style-loader!css-loader!./style.css');
 ```
 
-#####监听文件的变化：
+监听文件的变化：
 
 ```
 webpack --mode development  hello.js --output hello.bundle.js --module-bind 'css=style-loade!css-loader' --watch
 ```
 
-#####Webpack设置配置文件: 
+Webpack设置配置文件: 
 
 ```
 webpack –config webpack.dev.config.js
 ```
 
-#####使用npm 启动webpack: npm run dev 需要在package.json的scripts配置webpack命令：
+使用npm 启动webpack: npm run dev 需要在package.json的scripts配置webpack命令：
 
 ```
 "webpack": "webpack --config webpack.config.js --progress --display-modules --colors --display-reasons"
 ```
 
-#####Webpack多入口打包防止文件覆盖:
+Webpack多入口打包防止文件覆盖:
 可使用文件名+hash+chunkhash的方法，其中chunkhash每次都会不同，hash代表的是本次打包hash
-#####安装html-webpack-plugin: 
+安装html-webpack-plugin: 
 
 ```
 npm install html-webpack-plugin –save-dev
 ```
 
-#####webpack.config.js引入插件：
+webpack.config.js引入插件：
 
 ```
 plugins:[
@@ -61,15 +61,15 @@ plugins:[
     ]
 ```
 
-#####Html-webpack-plugin的模板语法:
+Html-webpack-plugin的模板语法:
 
 ```
 <%= htmlWebpackPlugin.options.title %> 
 //htmlWebpackPlugin是你在webpack.config.js引入该插件时定义的变量名称
 ```
 
-#####htmlWebpackPlugin存在的两个属性:
-files和options,可以通过模板语法和files来定义js文件在head还是body引入#####publicPath引入文件配置绝对路径：
+htmlWebpackPlugin存在的两个属性:
+files和options,可以通过模板语法和files来定义js文件在head还是body引入publicPath引入文件配置绝对路径：
 
 ```
 output:{
@@ -79,7 +79,7 @@ output:{
     }
 ```
 
-#####Index.html文件进行压缩minify:
+Index.html文件进行压缩minify:
 
 ```
 plugins:[
@@ -96,7 +96,7 @@ plugins:[
     ]
 ```
 
-#####打包多页面：
+打包多页面：
 
 ```
 var htmlWebpackPlugin = require('html-webpack-plugin');
@@ -144,7 +144,7 @@ module.exports = {
 }
 ```
 
-#####优化减少http请求文件，可以使用模板语言来实现：
+优化减少http请求文件，可以使用模板语言来实现：
 
 ```
 <!DOCTYPE html>
@@ -169,14 +169,14 @@ module.exports = {
 </body>
 ```
 
-#####Webpack使用babel-loader转换es6语法：
+Webpack使用babel-loader转换es6语法：
 
 ```
 npm install --save-dev babel-loader babel-core
 npm install --save-dev babel-preset-latest
 ```
 
-#####webpack.config.js的module配置babel:
+webpack.config.js的module配置babel:
 
 ```
 rules: [
@@ -189,14 +189,14 @@ rules: [
         ]
 ```
 
-#####打包的时候添加浏览器前缀(css后处理器)：
+打包的时候添加浏览器前缀(css后处理器)：
 
 ```
 npm install postcss-loader –save-dev
 npm install autoprefixer –save-dev
 ```
 
-#####在与webpack.config.js同级目录下添加postcss.config.js文件:
+在与webpack.config.js同级目录下添加postcss.config.js文件:
 
 ```
 module.exports = {
@@ -214,7 +214,7 @@ module.exports = {
 }
 ```
 
-#####Webpack.config.js的module添加postcss:
+Webpack.config.js的module添加postcss:
 
 ```
 module:{
@@ -237,7 +237,7 @@ module:{
     }
 ```
 
-#####安装less和less-loader:
+安装less和less-loader:
 
 ```
 npm install less –save-dev
@@ -262,7 +262,7 @@ module:{
     }
 ```
 
-#####安装html-loader;
+安装html-loader;
 
 ```
 npm install html-loader –save-dev
@@ -276,13 +276,13 @@ module:{
     }
 ```
 
-#####安装ejs-loader,用于处理html模板;
+安装ejs-loader,用于处理html模板;
 
 ```
 npm install ejs-loader –save-dev
 ```
 
-#####Webpack.config.js的module添加ejs-loader:
+Webpack.config.js的module添加ejs-loader:
 
 ```
 module:{
@@ -294,13 +294,13 @@ module:{
     }
 ```
 
-#####安装file-loader,用于处理图片
+安装file-loader,用于处理图片
 
 ```
 npm install file-loader –save-dev
 ```
 
-#####Webpack.config.js的module添加file-loader:
+Webpack.config.js的module添加file-loader:
 
 ```
 module:{
